@@ -18,6 +18,8 @@ import InvestProfile from './pages-investor/invest-profile/InvestProfile';
 import MainPage from './MainPage';
 import './App.css';
 import Tokenize from './pages/home-business/BuToken/CreateToken/UploadImage/Tokenize';
+import gifImage from './assets/fishing-cat.gif';
+
 
 const API_KEY = '';
 const APP_ID = '';
@@ -164,9 +166,9 @@ function App() {
 
   const handleExistingUser = () => {
     if (userType === 'business') {
-      navigate('/business-user');
+      navigate('/homebu');
     } else if (userType === 'investor') {
-      navigate('/invest-dashboard');
+      navigate('/invest-home');
     }
     closeModal();
   };
@@ -229,12 +231,12 @@ function App() {
   return (
     <>
       {/* {showNavbar && <InvestNavbar />} */}
-
+  
       <Routes>
         <Route path='/' element={<MainPage openModal={openModal} />} />
         <Route path='/choose' element={<Choose />} />
         <Route path='/collab' element={<Collab />} />
-
+  
         {/* Business */}
         <Route path='/homebu' element={<HomeBu />} />
         <Route path='/dashboardbu' element={<DashboardBu />} />
@@ -243,33 +245,39 @@ function App() {
         <Route path='/thankbu' element={<ThankBusiness />} />
         <Route path="/business-user/*" element={<BusinessUser />} />
         <Route path="/tokenize" element={<Tokenize />} />
-
+  
         {/* Investor */}
         <Route path="/investor" element={<Investor />} />
-        {/* <Route path="/invest-connect-message" element={<ConnectPage />} /> */}
         <Route path="/invest-dashboard" element={<InvestDashboard />} />
         <Route path="/invest-home" element={<Investor />} />
         <Route path="/invest-profile" element={<InvestProfile />} />
       </Routes>
-      
-      {/* Modal Popup */}
+  
+{/* Modal Popup */}
+{showModal && (
+  <div className="modal-overlay">
+    <div className="modal-content border-home">
+      {/* Close Button */}
+      <button className="close-button" onClick={closeModal}>&times;</button>
 
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h2>{userType === 'business' ? 'Business User' : 'Investor'}</h2>
-            <p>Are you an existing user or a new user?</p>
-            <div className="modal-buttons">
-              <button onClick={handleExistingUser}>Existing User</button>
-              <button onClick={handleNewUser}>New User</button>
-            </div>
-            <button className="close-modal" onClick={closeModal}>Close</button>
-            {error && <p className="error-message">{error}</p>}
-          </div>
-        </div>
-      )}
+      {/* Displaying the GIF */}
+      <div className="gif-container">
+        <img src={gifImage} alt="Description of the GIF" />
+      </div>
+      <h2 className="heading-role">Welcome, {userType === 'business' ? 'Business User' : 'Investor'}!</h2>
+      <p className="modal-paragraph">Are you an existing user or a new user?</p>
+      <div className="modal-buttons">
+        <button className="button" onClick={handleExistingUser}>Existing User</button>
+        <button className="button" onClick={handleNewUser}>New User</button>
+      </div>
+      {error && <p className="error-message">{error}</p>}
+    </div>
+  </div>
+)}
+
+
     </>
-  );
+  );  
 }
 
 export default App;

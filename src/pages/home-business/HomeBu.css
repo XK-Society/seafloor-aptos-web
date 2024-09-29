@@ -22,7 +22,7 @@
     font-size: 1.8rem;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
-    margin: 80px;
+    margin: 25px;
   }
 
   .create-token-button:hover {
@@ -34,6 +34,6 @@
     align-items: center;
   }
   .list-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #fff;
   }

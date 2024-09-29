@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './InvestDashboard.css'; // Import the CSS file
+import DashImage from '../../assets/turtle.gif';
 
 const InvestDashboard = () => {
     const tokens = [
@@ -34,7 +35,9 @@ const InvestDashboard = () => {
             <div className="token-list">
                 {tokens.map(token => (
                     <div key={token.id} className="token-card">
-                        <img src={token.image} alt={token.name} className="token-image" />
+                        <div className="gif-container-dash">
+                            <img src={DashImage} alt="Default Tokenize image" />
+                        </div>
                         <div className="token-info">
                             <h2 className="token-name">{token.name}</h2>
                             <p className="token-description">{token.description}</p>
