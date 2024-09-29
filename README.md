@@ -31,19 +31,6 @@ npm install
 3. Start the development server:
 npm run dev
 
-**Project Structure**
-seafloor-aptos-web/
-│
-├── public/               # Public assets
-├── src/                  # Main source code
-│   ├── components/       # Reusable components
-│   ├── pages/            # Application pages
-│   ├── services/         # API & blockchain interactions
-│   └── App.jsx           # Main App component
-├── .gitignore            # Ignored files
-├── vite.config.js        # Vite configuration
-└── README.md             # Documentation
-
 **Contributing**
 1. https://github.com/AqilJaafree
 2. https://github.com/adyars
