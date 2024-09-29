@@ -23,20 +23,20 @@
 }
 
 .logo {
-    width: 80px;
+    width: 185px;
     height: auto;
 }
 
 /* Heading Styling */
-h1 {
+.heading-role {
     color: #01204E; /* Dark blue color */
     font-size: 24px;
     margin-bottom: 20px;
 }
 
 /* Button Styling */
-.card button {
-    background-color: #01204E; /* Dark blue color */
+.button {
+    background-color: #0056b3; /* Blue color */
     color: #fff;
     padding: 12px 24px;
     font-size: 16px;
@@ -47,14 +47,18 @@ h1 {
     width: 100%;
     transition: background-color 0.3s ease;
 }
-
-.card button:hover {
-    background-color: #028391; /* teal on hover */
+.error-message {
+    color: red;
+    margin-top: 10px;
 }
 
-.card button:focus {
+.button:hover {
+    background-color: #003f7f; /* Darker blue on hover */
+}
+
+.button:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(75, 0, 130, 0.4);
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.4); /* Adjusted focus color */
 }
 
 /* Footer Styling */
@@ -75,20 +79,48 @@ h1 {
     align-items: center;
     z-index: 1000;
 }
-
 .modal-content {
     background: white;
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
+    position: relative;
+    font-family: "Poppins", sans-serif;
 }
-
-.modal-buttons button {
-    margin: 0.5rem;
+.close-button {
+    position: absolute; /* Positioning it relative to the modal */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 24px; /* Larger font for visibility */
+    color: #01204E; /* Dark blue color for the "X" */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s ease; /* Transition effect for color change */
+}
+.close-button:hover {
+    color: #ff0000; /* Change color on hover (red) */
 }
 
 .close-modal {
     margin-top: 1rem;
+}
+.modal-paragraph {
+    font-size: 16px; /* Adjust the font size */
+    color: #333; /* Set the text color */
+    margin: 1rem 0; /* Add some margin above and below */
+    line-height: 1.5; /* Adjust line height for better readability */
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin: 20px 0; /* Add some margin */
+}
+
+.gif-container img {
+    max-width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 
@@ -102,7 +134,7 @@ h1 {
         font-size: 20px;
     }
 
-    .card button {
+    .button {
         font-size: 14px;
         padding: 10px 20px;
     }

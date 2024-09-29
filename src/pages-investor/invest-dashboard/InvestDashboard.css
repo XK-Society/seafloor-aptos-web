@@ -41,6 +41,7 @@
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease; /* Optional hover effect */
+    flex-direction:column;
 }
 
 .token-card:hover {
@@ -76,6 +77,17 @@
     font-size: 16px; /* Base font size */
     font-weight: bold;
     color: #333;
+}
+
+.gif-container-dash {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    margin: 20px 0; /* Add some margin */
+}
+
+.gif-container-dash img {
+    max-width: 100%; /* Make it responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Media Queries for Responsive Design */
