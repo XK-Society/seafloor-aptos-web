@@ -1,6 +1,5 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import './App.css';
-import React, { useState, useEffect } from 'react';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { ZkMeWidget, verifyKycWithZkMeServices } from '@zkmelabs/widget';
 import '@zkmelabs/widget/dist/style.css';
@@ -18,44 +17,15 @@ import Investor from './pages-investor/HomeInvestor';
 import ConnectPage from './pages-investor/comp-investor/Connect';
 import InvestDashboard from './pages-investor/invest-dashboard/InvestDashboard';
 import InvestProfile from './pages-investor/invest-profile/InvestProfile';
-import InvestNavbar from './components/navbar-investor/InvestNavbar';
-
-import seafloorLogo from './assets/logo.png';
-import InvestNavbar from './components/navbar-investor/InvestNavbar'; // Import the InvestNavbar
+//import InvestNavbar from './components/navbar-investor/InvestNavbar';
 import UploadImage from './pages/home-business/BuToken/CreateToken/UploadImage/UploadImage';
 import TokenDesc from './pages/home-business/BuToken/TokenDesc/TokenDesc';
 import './App.css';
+import MainPage from './MainPage';
 
 const API_KEY = '';
 const APP_ID = '';
 const PROGRAM_NO = '';
-
-function MainPage({ openModal }) {
-  return (
-    <>
-      <div className='container'>
-        <div className='border-home'>
-          <div className='logo-home'>
-            <img src={seafloorLogo} className="logo" alt="Seafloor Finance logo" />
-          </div>
-          <h1>Seafloor Finance</h1>
-          <div className="card">
-            <button onClick={() => openModal('business')}>
-              Business User
-            </button>
-            <br />
-            <button onClick={() => openModal('investor')}>
-              Investor
-            </button>
-          </div>
-          <p className="footer-home">
-            Welcome to Seafloor Finance where raising funds is just one click away.
-          </p>
-        </div>
-      </div>
-    </>
-  );
-}
 
 function App() {
   const location = useLocation();
@@ -182,7 +152,7 @@ function App() {
     }
   };
 
-  const showNavbar = !location.pathname.startsWith('/invest') && !location.pathname.startsWith('/business');
+  // const showNavbar = !location.pathname.startsWith('/invest') && !location.pathname.startsWith('/business');
 
   const openModal = (type) => {
     setUserType(type);
@@ -262,8 +232,7 @@ function App() {
 
   return (
     <>
-      {showNavbar && <InvestNavbar />} {/* Show the navbar if not on /invest or /business */}
-      {showNavbar && <InvestNavbar />}
+      {/* {showNavbar && <InvestNavbar />} */}
 
       <Routes>
         <Route path='/' element={<MainPage openModal={openModal} />} />
