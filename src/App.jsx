@@ -164,7 +164,7 @@ function App() {
 
   const handleExistingUser = () => {
     if (userType === 'business') {
-      navigate('/business-user');
+      navigate('/homebu');
     } else if (userType === 'investor') {
       navigate('/invest-dashboard');
     }

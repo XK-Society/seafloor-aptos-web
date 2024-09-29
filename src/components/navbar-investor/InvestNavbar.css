@@ -15,13 +15,14 @@
 }
 
 .logo-investor {
+  margin-top: 20px;
   display: flex;
   align-items: center;
 }
 
 .logo-image-investor {
-  height: 50px;
-  margin-left: 0.5rem;
+  height: 80px;
+  margin-left: 1rem;
 }
 
 .wallet-investor {
@@ -40,8 +41,8 @@
 }
 
 .wallet-icon-investor {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   margin-right: 0.5rem;
 }
 
@@ -50,8 +51,9 @@
 }
 
 .wallet-investor p {
+  font-family: "Poppins", sans-serif;
   margin-right: 2rem;
-  font-weight: 600;
+  font-size: 20px;
 }
 
 .wallet-investor p:hover {

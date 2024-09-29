@@ -1,20 +1,19 @@
 .footer-investor {
     background-color: #fff; /* White background */
     border-radius: 20px; /* Curved edges */
-    width: 100%; /* Full width of the screen */
-    max-width: 1500px; /* Limit the maximum width */
+    width: 96.5%; /* Full width of the screen */
     position: fixed; /* Stick to the bottom */
     bottom: 0; /* Position at the bottom */
-    left: 50%; /* Center the footer */
-    transform: translateX(-50%); /* Ensure it's perfectly centered */
-    margin: 0 auto; /* Center the footer */
-    padding: 10px 20px; /* Padding around the content */
+    /*left: 50%;  Center the footer */
+    /*transform: translateX(-50%);  Ensure it's perfectly centered */
+    margin: auto; /* Center the footer */
+    padding: 1rem; /* Padding around the content */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-    z-index: 1000; /* Ensure it's above other elements */
-    box-sizing: border-box; /* Include padding and border in width */
-}
-
-.footer-container-investor {
+    /* z-index: 1000; Ensure it's above other elements */
+    /*box-sizing: border-box;  Include padding and border in width */
+  }
+  
+  .footer-container-investor {
     display: flex; /* Flexbox for layout */
     width: 100%; /* Ensure it takes full width of the footer */
     max-width: 1500px; /* Maximum width to avoid overflow */
@@ -24,27 +23,25 @@
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     margin: 0 auto; /* Center the container */
     box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
-
-.footer-item-investor {
+  }
+  
+  .footer-item-investor {
     text-align: center;
     color: grey; /* Default color for unselected icons */
     text-decoration: none;
     transition: color 0.3s;
     flex: 1;
-    min-width: 80px;
+    /* min-width: 200px; */
     margin: 1px;
-}
-
-.footer-icon-invest {
-    font-size: 20px;
+  }
+  
+  .footer-icon-invest {
+    font-size: 40px;
     margin-bottom: 1px;
     color: grey; /* Default icon color */
-}
-
-.footer-item-investor.active .footer-icon-invest {
+  }
+  
+  .footer-item-investor.active .footer-icon-invest {
     color: #032B5F; /* Color when selected */
-}
-
-
-
+  }
+  
