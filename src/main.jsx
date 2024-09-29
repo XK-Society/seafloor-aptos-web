@@ -7,12 +7,12 @@ import { BrowserRouter, useLocation } from 'react-router-dom'
 import InvestNavbar from './components/navbar-investor/InvestNavbar.jsx';
 
 function MainLayout() {
-  //const location = useLocation();
+  const location = useLocation();
   
-  // const excludePaths = ['/'];
-  //const isInvestorPath = location.pathname.startsWith('/invest');
+  const excludePaths = ['/'];
+  const isInvestorPath = location.pathname.startsWith('/invest');
 
-  //const shouldExclude = excludePaths.includes(location.pathname);
+  const shouldExclude = excludePaths.includes(location.pathname);
 
   return (
     <>
@@ -21,8 +21,8 @@ function MainLayout() {
       <div className='content'>
         <App />
       </div>
-      (<InvestFooter /> : <FooterBu />)
-      {/* {!shouldExclude && (isInvestorPath ? <InvestFooter /> : <FooterBu />)} */}
+      {/* (<InvestFooter /> : <FooterBu />) */}
+      {!shouldExclude && (isInvestorPath ? <InvestFooter /> : <FooterBu />)}
     </>
   );
 }
