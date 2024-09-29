@@ -1,14 +1,93 @@
-.container {
-    color: #01204E; 
-    font-family: "Poppins", sans-serif;
+/* InvestProfile-investor.css */
+
+/* Ensure the body and html cover the full height */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
-.container h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+/* General container styles */
+.profile-page-investor {
+    background-color: #032B5F; /* Background color */
+    padding: 20px;
+    max-width: 1500px; /* Adjust based on your layout */
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Enable flexbox for vertical alignment */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center align items horizontally */
+    justify-content: flex-start; /* Align items at the start (top) of the container */
+    min-height: 100vh; /* Make sure it takes at least the full viewport height */
+    padding-horizontal: 10px 20px 20px 30px;
+}
+
+/* Profile container styles */
+.profile-container-investor {
+    width: 90%; /* Default width */
+    max-width: 1500px; /* Limit max width for larger screens */
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px; /* Space between cards */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease; 
+}
+
+.header {
+    font-size: 26px; /* Base font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.container p {
-    font-size: 16px;
+/* Profile info styles */
+.profile-info-investor {
+    width: 100%; /* Ensure it takes full width */
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-start; /* Align items at the start (left) */
+}
+
+.profile-label-investor {
+    font-size: 15px; /* Base font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #1a1a1a; /* Use Colors.PRIMARY equivalent */
+    margin-bottom: 5px;
+}
+
+/* Profile item styles */
+.profile-item-investor {
+    margin-bottom: 10px; /* Space between items */
+}
+
+.profile-label-investor {
+    font-weight: bold; /* Label should be bold */
+}
+
+.profile-value-investor {
+    margin-left: 5px; /* Space between label and value */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .header-investor {
+        font-size: 24px; /* Smaller header size for small screens */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .header-investor {
+        font-size: 26px; /* Increase header size */
+    }
+}
+
+@media (min-width: 769px) {
+    .header-investor {
+        font-size: 28px; /* Increase header size for large screens */
+    }
 }

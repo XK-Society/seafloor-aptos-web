@@ -1,88 +1,108 @@
-/* Overall page styling */
-.investor-container {
-    padding: 20px;
-    text-align: center;
-    height: 100vh; /* Full height of the viewport */
+.container {
     display: flex;
-    flex-direction: column;
-    color: #01204E; /* Dark blue text */
-    font-family: "Poppins", sans-serif;
-}
-
-/* Container for the boxes */
-.boxes-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow-y: auto; /* Enable vertical scrolling */
-    margin-top: 20px;
-    flex-grow: 1; /* Grow to fill available space */
-}
-
-/* Individual box styling */
-.box {
-    position: relative;
-    width: 90%; /* Flexible width for responsiveness */
-    max-width: 600px; /* Set a max-width to prevent it from growing too wide */
-    height: 100px; /* Reduced height */
-    background-color: #01204E; /* Light grey with a purple tint */
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    text-align: left;
-    color: #fff; /* Dark purple text */
-    margin: 0 auto; /* Center the box */
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
 }
 
-/* Circle button styling */
-.circle-button {
-    position: absolute;
-    top: 50%;
-    right: 0; /* Center left */
-    transform: translate(-50%, -50%); /* Center vertically in relation to its own width */
-    width: 40px;
-    height: 40px;
-    background-color: #01204E; /* Dark blue background */
-    border: none;
-    border-radius: 50%;
-    color: white;
+.investText {
+    margin: 40px 0;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #032b5f;
+}
+
+.primaryContainer {
+    width: 85%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tokentitle {
     font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for the circle button */
-.circle-button:hover {
-    background-color: #028391; /* Slightly darker purple on hover */
-}
-
-/* Header styling */
-.investor-container h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #032b5f;
     margin-bottom: 20px;
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
-    .box {
-        width: 100%; /* Adjust width for smaller screens */
-        height: auto; /* Allow height to adjust based on content */
-    }
-    
-    .circle-button {
-        width: 30px; /* Smaller button for smaller screens */
-        height: 30px;
-        font-size: 20px;
-    }
+.tokenContainer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (max-width: 480px) {
-    .box {
-        width: 100%; /* Full width on very small screens */
-        height: auto; /* Allow height to adjust based on content */
-        padding: 5px; /* Adjust padding for smaller screens */
-    }
+.tokenSlider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.tokenItem {
+    min-width: 100%;
+    text-align: center;
+}
+
+.tokenImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.tokenName {
+    font-size: 24px;
+    color: #032b5f;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tokenDescription {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Volte', sans-serif;
+}
+
+.tokenButton {
+    background-color: #032b5f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.tokenButton:hover {
+    background-color: #0056b3;
+}
+
+.arrowsContainer {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.arrowButton {
+    background-color: #032b5f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.arrowButton:hover {
+    background-color: #0056b3;
 }

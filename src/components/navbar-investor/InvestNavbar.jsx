@@ -61,8 +61,6 @@ const InvestNavbar = () => {
     await disconnectWallet();
     
     // Then, prompt to connect a new wallet
-    // For now, we'll just call connectPetraWallet, but you might want to
-    // add logic here to switch between different wallet types in the future
     await connectPetraWallet();
   };
 
@@ -74,21 +72,21 @@ const InvestNavbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <div className="logo">
+    <nav className="navbar-investor">
+      <div className="navbar-container-investor">
+        <div className="logo-investor">
           <Link to='/'>
-            <img src={Logo} alt="Logo" className="logo-image" />
+            <img src={Logo} alt="Logo" className="logo-image-investor" />
           </Link>
         </div>
-        <div className="wallet">
+        <div className="wallet-investor">
           {!account ? (
-              <button className="wallet-button" onClick={connectPetraWallet}>
-                <FaWallet className="wallet-icon" />
-                <p>Connect Petra</p>
-              </button>
+            <button className="wallet-button-investor" onClick={connectPetraWallet}>
+              <FaWallet className="wallet-icon-investor" />
+              <p>Connect Petra</p>
+            </button>
           ) : (
-            <div className="wallet-info">
+            <div className="wallet-info-investor">
               <p>{`${formatAddress(account)} (${walletType})`}</p>
               <button onClick={disconnectWallet}>Disconnect</button>
               <button onClick={switchWallet}>Switch Wallet</button>

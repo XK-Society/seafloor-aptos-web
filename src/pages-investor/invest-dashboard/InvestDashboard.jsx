@@ -1,46 +1,47 @@
 import React from 'react';
-import './InvestDashboard.css';
-import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import './InvestDashboard.css'; // Import the CSS file
 
 const InvestDashboard = () => {
-    const navigate = useNavigate();
-
-    const handleNavigate = (category) => {
-        navigate('/investor', { state: { selectedCategory: category } });
-    };
+    const tokens = [
+        {
+            id: 1,
+            name: 'Token Name 1',
+            description: 'Token Description 1',
+            image: 'https://via.placeholder.com/100', // Replace with actual image URL
+            totalInvest: '$1000',
+        },
+        {
+            id: 2,
+            name: 'Token Name 2',
+            description: 'Token Description 2',
+            image: 'https://via.placeholder.com/100', // Replace with actual image URL
+            totalInvest: '$1500',
+        },
+        {
+            id: 3,
+            name: 'Token Name 3',
+            description: 'Token Description 3',
+            image: 'https://via.placeholder.com/100', // Replace with actual image URL
+            totalInvest: '$3500',
+        },
+        // Add more tokens as needed
+    ];
 
     return (
-        <div className="dashboard">
-            <h1 className='dashboard-title'>Dashboard</h1>
-            <div className="grid-container">
-                <div className="grid-item">
-                    <h2>Maschain</h2>
-                    <p className="dashboard-description">
-                        Maschain is a virtual reality space in which users can interact with a computer-generated environment and other users.
-                    </p>
-                    <button className="arrow-button" onClick={() => handleNavigate('Maschain')}>
-                        <FaArrowRight />
-                    </button>
-                </div>
-                <div className="grid-item">
-                    <h2>Aptos</h2>
-                    <p className="dashboard-description">
-                        Aptos is a blockchain-based project focused on creating a high-performance, scalable, and secure platform for decentralized applications.
-                    </p>
-                    <button className="arrow-button" onClick={() => handleNavigate('Aptos')}>
-                        <FaArrowRight />
-                    </button>
-                </div>
-                <div className="grid-item">
-                    <h2>Ethereum</h2>
-                    <p className="dashboard-description">
-                        Ethereum is a decentralized, open-source blockchain system that features smart contract functionality and its own cryptocurrency, Ether.
-                    </p>
-                    <button className="arrow-button" onClick={() => handleNavigate('Ethereum')}>
-                        <FaArrowRight />
-                    </button>
-                </div>
+        <div className="container">
+            <h1 className="header">List of Tokenize</h1>
+            <div className="token-list">
+                {tokens.map(token => (
+                    <div key={token.id} className="token-card">
+                        <img src={token.image} alt={token.name} className="token-image" />
+                        <div className="token-info">
+                            <h2 className="token-name">{token.name}</h2>
+                            <p className="token-description">{token.description}</p>
+                            <p className="token-invest">{token.totalInvest}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );

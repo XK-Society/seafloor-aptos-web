@@ -1,49 +1,125 @@
-.dashboard {
+/* General container styles */
+.container {
+    background-color: #032B5F; 
+    padding: 20px;
+    max-width: 1500px; 
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Enable flexbox for vertical alignment */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center align items horizontally */
+    justify-content: flex-start; /* Align items at the start (top) of the container */
+    min-height: 100vh; /* Make sure it takes at least the full viewport height */
+    padding: 5px 20px 20px 30px;
+}
+
+/* Header styling */
+.header {
+    font-size: 26px; /* Base font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #fff;
     text-align: center;
-    padding: 1rem;
-    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
 }
 
-.dashboard-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #2d3748;
+/* Token list styles */
+.token-list {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    width: 100%; /* Ensure it takes full width of the container */
+    align-items: center; /* Center align token cards */
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.grid-item {
-    background-color: #edf2f7;
-    padding: 2rem;
-    border-radius: 8px;
-    position: relative; /* Ensure arrow button is positioned correctly */
-}
-
-.grid-item h2 {
-    margin-bottom: 1rem;
-}
-
-.dashboard-description {
-    font-size: 1rem;
-    color: #2d3748;
-    font-weight: 100%;
-}
-
-.arrow-button {
-    background-color: #2d3748;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+/* Token card styling */
+.token-card {
+    width: 90%; /* Default width *//* Limit max width for larger screens */
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px; /* Space between cards */
     display: flex;
     align-items: center;
-    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease; /* Optional hover effect */
+}
+
+.token-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Change shadow on hover */
+}
+
+.token-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.token-info {
+    flex: 1;
+}
+
+.token-name {
+    font-size: 18px; /* Base font size */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #1a1a1a; /* Use Colors.PRIMARY equivalent */
+    margin-bottom: 5px;
+}
+
+.token-description {
+    font-size: 14px; /* Base font size */
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.token-invest {
+    font-size: 16px; /* Base font size */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .header {
+        font-size: 24px; /* Smaller header size for small screens */
+    }
+
+    .token-card {
+        width: 95%; /* Wider card for small screens */
+        padding: 15px; /* Reduced padding */
+    }
+
+    .token-name {
+        font-size: 16px; /* Smaller font size for name */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .header {
+        font-size: 26px; /* Increase header size */
+    }
+
+    .token-card {
+        width: 80%; /* Wider card for medium screens */
+        padding: 18px; /* Moderate padding */
+    }
+
+    .token-name {
+        font-size: 18px; /* Base font size */
+    }
+}
+
+@media (min-width: 769px) {
+    .header {
+        font-size: 28px; /* Increase header size for large screens */
+    }
+
+    .token-card {
+        width: 70%; /* Wider card for large screens */
+        padding: 20px; /* Default padding */
+    }
+
+    .token-name {
+        font-size: 20px; /* Larger font size for name */
+    }
 }

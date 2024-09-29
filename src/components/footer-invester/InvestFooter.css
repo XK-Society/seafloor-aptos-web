@@ -1,37 +1,50 @@
-.footer {
-    background-color: #01204E;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
+.footer-investor {
+    background-color: #fff; /* White background */
+    border-radius: 20px; /* Curved edges */
+    width: 100%; /* Full width of the screen */
+    max-width: 1500px; /* Limit the maximum width */
+    position: fixed; /* Stick to the bottom */
+    bottom: 0; /* Position at the bottom */
+    left: 50%; /* Center the footer */
+    transform: translateX(-50%); /* Ensure it's perfectly centered */
+    margin: 0 auto; /* Center the footer */
+    padding: 10px 20px; /* Padding around the content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    z-index: 1000; /* Ensure it's above other elements */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.footer-container-investor {
+    display: flex; /* Flexbox for layout */
+    width: 100%; /* Ensure it takes full width of the footer */
+    max-width: 1500px; /* Maximum width to avoid overflow */
+    min-width: 320px; /* Minimum width */
+    justify-content: space-around; /* Space out items evenly */
+    align-items: center; /* Center align items vertically */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin: 0 auto; /* Center the container */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
-.footer-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-size: 1rem;
+.footer-item-investor {
+    text-align: center;
+    color: grey; /* Default color for unselected icons */
     text-decoration: none;
+    transition: color 0.3s;
+    flex: 1;
+    min-width: 80px;
+    margin: 1px;
 }
 
-.footer-icon {
-    height: 24px;
-    width: 24px;
-    margin-bottom: 0.5rem;
+.footer-icon-invest {
+    font-size: 20px;
+    margin-bottom: 1px;
+    color: grey; /* Default icon color */
 }
 
-.footer-item span {
-    text-decoration: none; /* Remove underline from span */
+.footer-item-investor.active .footer-icon-invest {
+    color: #032B5F; /* Color when selected */
 }
 
-.footer-item:hover {
-    color: #F6DCAC; /* Lighter color on hover */
-}
+
+

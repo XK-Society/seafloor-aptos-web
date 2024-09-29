@@ -9,7 +9,6 @@ import Choose from './components/choose-business/Choose';
 import Collab from './pages/collab/Collab';
 import BusinessUser from './pages/home-business/HomeBu';
 import Investor from './pages-investor/HomeInvestor';
-import ConnectPage from './pages-investor/comp-investor/Connect';
 import InvestDashboard from './pages-investor/invest-dashboard/InvestDashboard';
 import InvestProfile from './pages-investor/invest-profile/InvestProfile';
 import seafloorLogo from './assets/logo.png';
@@ -100,7 +99,7 @@ function App() {
         <Route path='/collab' element={<Collab />} />
         <Route path="/business-user/*" element={<BusinessUser />} />
         <Route path="/investor" element={<Investor />} />
-        <Route path="/invest-connect-message" element={<ConnectPage />} />
+        {/* <Route path="/invest-connect-message" element={<ConnectPage />} /> */}
         <Route path="/invest-dashboard" element={<InvestDashboard />} />
         <Route path="/invest-home" element={<Investor />} />
         <Route path="/invest-profile" element={<InvestProfile />} />

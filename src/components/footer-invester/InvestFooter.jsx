@@ -1,27 +1,32 @@
 import { FaHome, FaFolder, FaUser } from 'react-icons/fa';
 import './InvestFooter.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const InvestFooter = () => {
-
-return (
-    <footer className="footer">
-        <div className="footer-container">
-            <Link to='/invest-home' className="footer-item">
-                <FaHome className="footer-icon" />
-                <span>Home</span>
-            </Link>
-            <Link to='/invest-dashboard' className="footer-item">
-                <FaFolder className="footer-icon" />
-                <span>Dashboard</span>
-            </Link>
-            <Link to='/invest-profile' className="footer-item">
-                <FaUser className="footer-icon" />
-                <span>Profile</span>
-            </Link>
-        </div>
-    </footer>
-);
+    return (
+        <footer className="footer-investor">
+            <div className="footer-container-investor">
+                <NavLink
+                    to='/invest-home'
+                    className={({ isActive }) => isActive ? "footer-item-investor active" : "footer-item-investor"}
+                >
+                    <FaHome className="footer-icon-invest" />
+                </NavLink>
+                <NavLink
+                    to='/invest-dashboard'
+                    className={({ isActive }) => isActive ? "footer-item-investor active" : "footer-item-investor"}
+                >
+                    <FaFolder className="footer-icon-invest" />
+                </NavLink>
+                <NavLink
+                    to='/invest-profile'
+                    className={({ isActive }) => isActive ? "footer-item-investor active" : "footer-item-investor"}
+                >
+                    <FaUser className="footer-icon-invest" />
+                </NavLink>
+            </div>
+        </footer>
+    );
 };
 
 export default InvestFooter;
