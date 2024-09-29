@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaWallet } from 'react-icons/fa';
 import './InvestNavbar.css';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/3d-logo.png';
 import { Link } from 'react-router-dom';
 
 const InvestNavbar = () => {

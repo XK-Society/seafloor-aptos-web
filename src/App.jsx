@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
+import './App.css';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import HomeBu from './pages/home-business/HomeBu';
 import ProfileBu from './pages/profile-business/ProfileBu';
@@ -13,8 +14,9 @@ import ConnectPage from './pages-investor/comp-investor/Connect';
 import InvestDashboard from './pages-investor/invest-dashboard/InvestDashboard';
 import InvestProfile from './pages-investor/invest-profile/InvestProfile';
 import seafloorLogo from './assets/logo.png';
-import './App.css';
 import InvestNavbar from './components/navbar-investor/InvestNavbar'; // Import the InvestNavbar
+import UploadImage from './pages/home-business/BuToken/CreateToken/UploadImage/UploadImage';
+import TokenDesc from './pages/home-business/BuToken/TokenDesc/TokenDesc';
 
 function MainPage({ openModal }) {
   return (
@@ -49,6 +51,10 @@ function App() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false); // Manage modal visibility
   const [userType, setUserType] = useState(''); // Track if Business or Investor
+  
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor = "#032B5F"
+  });
 
   // Conditionally render the navbar based on the route
   const showNavbar = !location.pathname.startsWith('/invest') && !location.pathname.startsWith('/business');
@@ -88,24 +94,29 @@ function App() {
   return (
     <>
       {showNavbar && <InvestNavbar />} {/* Show the navbar if not on /invest or /business */}
-
       <Routes>
         <Route path='/' element={<MainPage openModal={openModal} />} />
+        <Route path='/choose' element={<Choose />} />
+        <Route path='/collab' element={<Collab />} />
+
+        {/* Business */}
         <Route path='/homebu' element={<HomeBu />} />
         <Route path='/dashboardbu' element={<DashboardBu />} />
         <Route path='/profilebu' element={<ProfileBu />} />
         <Route path='/profilecreate' element={<ProfileCreate />} />
         <Route path='/thankbu' element={<ThankBusiness />} />
-        <Route path='/choose' element={<Choose />} />
-        <Route path='/collab' element={<Collab />} />
         <Route path="/business-user/*" element={<BusinessUser />} />
+        <Route path="/upload-token-image" element={<UploadImage />} />
+        <Route path="/token-desc" element={<TokenDesc />} />
+
+        {/* Investor */}
         <Route path="/investor" element={<Investor />} />
         <Route path="/invest-connect-message" element={<ConnectPage />} />
         <Route path="/invest-dashboard" element={<InvestDashboard />} />
         <Route path="/invest-home" element={<Investor />} />
         <Route path="/invest-profile" element={<InvestProfile />} />
       </Routes>
-
+      
       {/* Modal Popup */}
       {showModal && (
         <div className="modal-overlay">
