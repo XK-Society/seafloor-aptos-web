@@ -13,10 +13,7 @@ const InvestNavbar = () => {
   }, []);
 
   const checkForConnectedWallet = async () => {
-    if (window.ethereum && window.ethereum.selectedAddress) {
-      setAccount(window.ethereum.selectedAddress);
-      setWalletType('metamask');
-    } else if ('aptos' in window) {
+    if ('aptos' in window) {
       const wallet = window.aptos;
       try {
         const response = await wallet.account();
@@ -27,20 +24,6 @@ const InvestNavbar = () => {
       } catch (error) {
         console.error('Failed to connect to Petra wallet:', error);
       }
-    }
-  };
-
-  const connectMetaMask = async () => {
-    if (window.ethereum) {
-      try {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        setAccount(accounts[0]);
-        setWalletType('metamask');
-      } catch (error) {
-        console.error('Failed to connect to MetaMask:', error);
-      }
-    } else {
-      window.open('https://metamask.io/download/', '_blank');
     }
   };
 
@@ -68,18 +51,9 @@ const InvestNavbar = () => {
         console.error('Failed to disconnect from Petra wallet:', error);
       }
     }
-    // Note: MetaMask doesn't have a disconnect method
+
     setAccount(null);
     setWalletType(null);
-  };
-
-  const switchWallet = () => {
-    disconnectWallet();
-    if (walletType === 'metamask') {
-      connectPetraWallet();
-    } else {
-      connectMetaMask();
-    }
   };
 
   const formatAddress = (address) => {
@@ -99,16 +73,10 @@ const InvestNavbar = () => {
         </div>
         <div className="wallet">
           {!account ? (
-            <>
-              <button className="wallet-button" onClick={connectMetaMask}>
-                <FaWallet className="wallet-icon" />
-                <p>Connect MetaMask</p>
-              </button>
               <button className="wallet-button" onClick={connectPetraWallet}>
                 <FaWallet className="wallet-icon" />
                 <p>Connect Petra</p>
               </button>
-            </>
           ) : (
             <div className="wallet-info">
               <p>{`${formatAddress(account)} (${walletType})`}</p>

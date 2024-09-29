@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBarBu from './components/navbar-business/NavBarBu.jsx';
 import FooterBu from './components/footer-business/FooterBu.jsx';
 import InvestFooter from './components/footer-invester/InvestFooter.jsx';
 import App from './App.jsx';
@@ -17,7 +16,7 @@ function MainLayout() {
 
   return (
     <>
-      {!shouldExclude && (isInvestorPath ? <InvestNavbar /> : <NavBarBu />)}
+      {!shouldExclude && (isInvestorPath ? <InvestNavbar /> : <InvestNavbar />)}
       <div className='content'>
         <App />
       </div>
