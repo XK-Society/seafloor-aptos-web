@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './TokenDesc.css';
+import './Tokenize.css';
 
-const TokenDesc = () => {
+const Tokenize = () => {
   const [tokenName, setTokenName] = useState('');
   const [tokenDescription, setTokenDescription] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -14,29 +14,29 @@ const TokenDesc = () => {
   };
 
   return (
-    <div className="token-desc-content">
-      <h1>Create Token</h1>
-      <div className="token-desc-container">
+    <div className="token" >
+        <h1>Tokenize your business!</h1>
+    <div className="token-desc-container">
       {!submitted ? (
         <form className="token-desc" onSubmit={handleSubmit}>
           <div className="desc-group">
-            <label htmlFor="tokenName">Token Name</label>
+            <label htmlFor="tokenName">Business Name</label>
             <input
               type="text"
               id="tokenName"
               value={tokenName}
               onChange={(e) => setTokenName(e.target.value)}
-              placeholder="Enter Token Name"
+              placeholder="Enter Business Name"
               required
             />
           </div>
           <div className="desc-group">
-            <label htmlFor="tokenDescription">Token Description</label>
+            <label htmlFor="tokenDescription">Business Description</label>
             <textarea
               id="tokenDescription"
               value={tokenDescription}
               onChange={(e) => setTokenDescription(e.target.value)}
-              placeholder="Enter Token Description"
+              placeholder="Enter Business Description"
               required
             />
           </div>
@@ -59,4 +59,4 @@ const TokenDesc = () => {
   );
 };
 
-export default TokenDesc;
+export default Tokenize;

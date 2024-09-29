@@ -9,7 +9,7 @@ const HomeBu = () => {
 
       <header className="homepage-header">
         <h1 className="hpgheader-text">Make your Business as a Token now!</h1>
-        <Link to="/upload-token-image">
+        <Link to="/tokenize">
           <button className="create-token-button">Create Token</button>
         </Link>
       </header>

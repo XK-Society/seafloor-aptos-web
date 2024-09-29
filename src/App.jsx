@@ -4,7 +4,6 @@ import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { ZkMeWidget, verifyKycWithZkMeServices } from '@zkmelabs/widget';
 import '@zkmelabs/widget/dist/style.css';
 
-// Import your components
 import HomeBu from './pages/home-business/HomeBu';
 import ProfileBu from './pages/profile-business/ProfileBu';
 import ProfileCreate from './pages/profilecreate-business/ProfileCreate';
@@ -16,11 +15,9 @@ import BusinessUser from './pages/home-business/HomeBu';
 import Investor from './pages-investor/HomeInvestor';
 import InvestDashboard from './pages-investor/invest-dashboard/InvestDashboard';
 import InvestProfile from './pages-investor/invest-profile/InvestProfile';
-//import InvestNavbar from './components/navbar-investor/InvestNavbar';
-import UploadImage from './pages/home-business/BuToken/CreateToken/UploadImage/UploadImage';
-import TokenDesc from './pages/home-business/BuToken/TokenDesc/TokenDesc';
-import './App.css';
 import MainPage from './MainPage';
+import './App.css';
+import Tokenize from './pages/home-business/BuToken/CreateToken/UploadImage/Tokenize';
 
 const API_KEY = '';
 const APP_ID = '';
@@ -245,8 +242,7 @@ function App() {
         <Route path='/profilecreate' element={<ProfileCreate />} />
         <Route path='/thankbu' element={<ThankBusiness />} />
         <Route path="/business-user/*" element={<BusinessUser />} />
-        <Route path="/upload-token-image" element={<UploadImage />} />
-        <Route path="/token-desc" element={<TokenDesc />} />
+        <Route path="/tokenize" element={<Tokenize />} />
 
         {/* Investor */}
         <Route path="/investor" element={<Investor />} />

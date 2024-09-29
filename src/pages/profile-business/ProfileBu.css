@@ -1,4 +1,5 @@
 .profile-page {
+    font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,21 +10,23 @@
   
   .profile-page h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
   }
   
   .profile-info {
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 30px;
     width: 100%;
     max-width: 600px;
-    background-color: #f8f9fa;
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
   }
   
   .profile-item {
@@ -34,12 +37,12 @@
   
   .profile-label {
     font-weight: bold;
-    color: #555;
+    color: #032B5F;
   }
   
   .profile-value {
-    font-size: 1rem;
-    color: #333;
+    font-size: 2rem;
+    color: #032B5F;
     word-break: break-all;
   }
   
