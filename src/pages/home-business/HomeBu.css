@@ -8,6 +8,7 @@
   }
 
   .hpgheader-text {
+    font-family: "Poppins", sans-serif;
     font-size: 2rem;
     color: #032B5F;
   }
@@ -21,6 +22,7 @@
     font-size: 1.8rem;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
+    margin: 25px;
   }
 
   .create-token-button:hover {
@@ -32,6 +34,6 @@
     align-items: center;
   }
   .list-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #fff;
   }
