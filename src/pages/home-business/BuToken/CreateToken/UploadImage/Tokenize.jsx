@@ -67,22 +67,24 @@ const Tokenize = () => {
   const investInPool = async (amount) => {
     if (!client || !walletAddress) return;
 
-    try {
-      const payload = {
-        type: "entry_function_payload",
-        function: `${MODULE_ADDRESS}::investment_pool::invest`,
-        type_arguments: [],
-        arguments: [amount.toString()]
-      };
+    const LIQUIDITY_POOL_ADDRESS = "0xb1c52baf095e058aa36ec4c6e9bf341a9871e72fc7338946f02df78c3d9bf139";
 
-      const pendingTransaction = await window.aptos.signAndSubmitTransaction(payload);
-      await client.waitForTransaction(pendingTransaction.hash);
-      await fetchCrabBalance(walletAddress, client);
-      console.log("Investment in pool successful");
+    try {
+        const payload = {
+            type: "entry_function_payload",
+            function: `${MODULE_ADDRESS}::crab_token::transfer`,
+            type_arguments: [],
+            arguments: [walletAddress, LIQUIDITY_POOL_ADDRESS, amount.toString()]
+        };
+
+        const pendingTransaction = await window.aptos.signAndSubmitTransaction(payload);
+        await client.waitForTransaction(pendingTransaction.hash);
+        await fetchCrabBalance(walletAddress, client);
+        console.log("CRAB tokens transferred to liquidity pool successfully");
     } catch (error) {
-      console.error("Failed to invest in pool:", error);
+        console.error("Failed to transfer CRAB tokens to liquidity pool:", error);
     }
-  };
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
