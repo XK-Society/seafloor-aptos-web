@@ -14,7 +14,9 @@ const defaultTokens = [
 
 const InTokenList = ({ tokens = defaultTokens }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const slideAnim = useRef(0); // No need for animation as we use CSS for sliding
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedTokenName, setSelectedTokenName] = useState(''); // State to hold the selected token name
+    const slideAnim = useRef(0);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -30,8 +32,18 @@ const InTokenList = ({ tokens = defaultTokens }) => {
     };
 
     const handleButtonPress = (token) => {
-        navigate('', { state: { token } });
+        setSelectedTokenName(token.name); // Set the selected token name
+        setModalVisible(true); // Show the modal
         console.log(`Click Details Token ${token.id}`);
+    };
+
+    const handleCloseModal = () => {
+        setModalVisible(false);
+    };
+
+    const handleConfirmPurchase = () => {
+        console.log('Purchase confirmed for:', selectedTokenName);
+        setModalVisible(false);
     };
 
     return (
@@ -47,7 +59,7 @@ const InTokenList = ({ tokens = defaultTokens }) => {
                                 <h4 className="tokenName">{token.name}</h4>
                                 <p className="tokenDescription">{token.price}</p>
                                 <button className="tokenButton" onClick={() => handleButtonPress(token)}>
-                                    Detail
+                                    Buy
                                 </button>
                             </div>
                         ))}
@@ -63,6 +75,23 @@ const InTokenList = ({ tokens = defaultTokens }) => {
                     </div>
                 </div>
             </div>
+
+            {/* Modal for Confirmation */}
+            {modalVisible && (
+                <div className="modalOverlay">
+                    <div className="modalContent">
+                        <h3>Yeay! You purchased {selectedTokenName}.</h3> {/* Display selected token name */}
+                        <div className="modalButtons">
+                            <button className="modalButton" onClick={handleConfirmPurchase}>
+                                Transaction Link
+                            </button>
+                            <button className="modalButton closeButton" onClick={handleCloseModal}>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
