@@ -56,6 +56,16 @@ const InvestNavbar = () => {
     setWalletType(null);
   };
 
+  const switchWallet = async () => {
+    // First, disconnect the current wallet
+    await disconnectWallet();
+    
+    // Then, prompt to connect a new wallet
+    // For now, we'll just call connectPetraWallet, but you might want to
+    // add logic here to switch between different wallet types in the future
+    await connectPetraWallet();
+  };
+
   const formatAddress = (address) => {
     if (address && address.length > 10) {
       return `${address.slice(0, 6)}...${address.slice(-4)}`;
