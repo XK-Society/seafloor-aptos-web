@@ -1,11 +1,16 @@
-# React + Vite
+**Seafloor Finance Frontend**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Overview**
+Seafloor Finance is a decentralized finance (DeFi) platform that allows users to engage in various financial activities on the blockchain. This repository contains the frontend code for the Seafloor Finance web application, built using modern web development tools like React with Vite.
 
-Currently, two official plugins are available:
+**Features**
+Token Management: Create, view, and manage DeFi tokens.
+User Dashboard: Displays token balances, transaction history, and account information.
+Staking & Liquidity: Users can stake tokens and provide liquidity to pools.
+Wallet Integration: Supports multiple crypto wallets like MetaMask, WalletConnect, etc.
+Responsive Design: Optimized for both desktop and mobile devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Technologies Used**
+React.js: A JavaScript library for building user interfaces.
+React Router: For client-side routing and navigation.
 
-Explorer Link: Masverse Explorer - Transaction Details
-https://explorer-testnet.maschain.com/0xd7b9ffd7346ca39be1d0bdeb5ac8e616ad19d80e24152640d4081059be1eeb9c
