@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
+import './App.css';
 import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { ZkMeWidget, verifyKycWithZkMeServices } from '@zkmelabs/widget';
 import '@zkmelabs/widget/dist/style.css';
@@ -15,49 +16,27 @@ import BusinessUser from './pages/home-business/HomeBu';
 import Investor from './pages-investor/HomeInvestor';
 import InvestDashboard from './pages-investor/invest-dashboard/InvestDashboard';
 import InvestProfile from './pages-investor/invest-profile/InvestProfile';
-import InvestNavbar from './components/navbar-investor/InvestNavbar';
-
-import seafloorLogo from './assets/logo.png';
+//import InvestNavbar from './components/navbar-investor/InvestNavbar';
+import UploadImage from './pages/home-business/BuToken/CreateToken/UploadImage/UploadImage';
+import TokenDesc from './pages/home-business/BuToken/TokenDesc/TokenDesc';
 import './App.css';
+import MainPage from './MainPage';
 
 const API_KEY = '';
 const APP_ID = '';
 const PROGRAM_NO = '';
 
-function MainPage({ openModal }) {
-  return (
-    <>
-      <div className='container'>
-        <div className='border-home'>
-          <div className='logo-home'>
-            <img src={seafloorLogo} className="logo" alt="Seafloor Finance logo" />
-          </div>
-          <h1>Seafloor Finance</h1>
-          <div className="card">
-            <button onClick={() => openModal('business')}>
-              Business User
-            </button>
-            <br />
-            <button onClick={() => openModal('investor')}>
-              Investor
-            </button>
-          </div>
-          <p className="footer-home">
-            Welcome to Seafloor Finance where raising funds is just one click away.
-          </p>
-        </div>
-      </div>
-    </>
-  );
-}
-
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
-  const [userType, setUserType] = useState('');
+  const [showModal, setShowModal] = useState(false); // Manage modal visibility
+  const [userType, setUserType] = useState(''); // Track if Business or Investor
   const [zkMeWidget, setZkMeWidget] = useState(null);
   const [error, setError] = useState(null);
+  
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor = "#032B5F"
+  });
 
   useEffect(() => {
     initializeZkMeWidget();
@@ -172,7 +151,7 @@ function App() {
     }
   };
 
-  const showNavbar = !location.pathname.startsWith('/invest') && !location.pathname.startsWith('/business');
+  // const showNavbar = !location.pathname.startsWith('/invest') && !location.pathname.startsWith('/business');
 
   const openModal = (type) => {
     setUserType(type);
@@ -252,24 +231,32 @@ function App() {
 
   return (
     <>
-      {showNavbar && <InvestNavbar />}
+      {/* {showNavbar && <InvestNavbar />} */}
 
       <Routes>
         <Route path='/' element={<MainPage openModal={openModal} />} />
+        <Route path='/choose' element={<Choose />} />
+        <Route path='/collab' element={<Collab />} />
+
+        {/* Business */}
         <Route path='/homebu' element={<HomeBu />} />
         <Route path='/dashboardbu' element={<DashboardBu />} />
         <Route path='/profilebu' element={<ProfileBu />} />
         <Route path='/profilecreate' element={<ProfileCreate />} />
         <Route path='/thankbu' element={<ThankBusiness />} />
-        <Route path='/choose' element={<Choose />} />
-        <Route path='/collab' element={<Collab />} />
         <Route path="/business-user/*" element={<BusinessUser />} />
+        <Route path="/upload-token-image" element={<UploadImage />} />
+        <Route path="/token-desc" element={<TokenDesc />} />
+
+        {/* Investor */}
         <Route path="/investor" element={<Investor />} />
         {/* <Route path="/invest-connect-message" element={<ConnectPage />} /> */}
         <Route path="/invest-dashboard" element={<InvestDashboard />} />
         <Route path="/invest-home" element={<Investor />} />
         <Route path="/invest-profile" element={<InvestProfile />} />
       </Routes>
+      
+      {/* Modal Popup */}
 
       {showModal && (
         <div className="modal-overlay">
