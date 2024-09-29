@@ -1,0 +1,14 @@
+.container {
+    color: #01204E; 
+    font-family: "Poppins", sans-serif;
+}
+
+.container h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container p {
+    font-size: 16px;
+}

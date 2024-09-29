@@ -1,0 +1,36 @@
+.footer {
+  background-color: #01204E;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.footer-icon {
+  height: 24px;
+  width: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-item span {
+  text-decoration: none; /* Remove underline from span */
+}
+
+.footer-item:hover {
+  color: #F6DCAC; /* Lighter color on hover */
+}

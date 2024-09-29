@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    font-family: "Poppins", sans-serif;
+}
+
+.border-home {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    width: 100%;
+}
+
+/* Logo Styling */
+.logo-home {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Heading Styling */
+h1 {
+    color: #01204E; /* Dark blue color */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.card button {
+    background-color: #01204E; /* Dark blue color */
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #028391; /* teal on hover */
+}
+
+.card button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(75, 0, 130, 0.4);
+}
+
+/* Footer Styling */
+.footer-home {
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 480px) {
+    .border-home {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .card button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .footer-home {
+        font-size: 12px;
+    }
+}

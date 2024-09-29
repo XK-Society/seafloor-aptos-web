@@ -1,0 +1,13 @@
+.connect-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #4B0082; /* Dark purple text */
+    text-align: center;
+}
+
+.connect-container h2 {
+    margin: 0;
+    font-size: 24px;
+}

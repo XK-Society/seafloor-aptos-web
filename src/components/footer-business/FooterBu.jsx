@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+import { FaHome, FaFolder, FaUser } from 'react-icons/fa';
+import './FooterBu.css';
+import { Link } from 'react-router-dom';
+
+const FooterBu = () => {
+  
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+          <Link to='/' className="footer-item">
+            <FaHome className="footer-icon" />
+            <span>Home</span>
+          </Link>
+          <Link to='/dashboardbu' className="footer-item">
+            <FaFolder className="footer-icon" />
+            <span>Dashboard</span>
+          </Link>
+          <Link to='/profileBu' className="footer-item">
+            <FaUser className="footer-icon" />
+            <span>Profile</span>
+          </Link>
+      </div>
+    </footer>
+  );
+};
+
+export default FooterBu;
