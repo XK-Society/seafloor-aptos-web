@@ -83,7 +83,7 @@ const InvestNavbar = () => {
           {!account ? (
             <button className="wallet-button-investor" onClick={connectPetraWallet}>
               <FaWallet className="wallet-icon-investor" />
-              <p>Connect Petra</p>
+              <p>Connect<br/>Petra Wallet</p>
             </button>
           ) : (
             <div className="wallet-info-investor">

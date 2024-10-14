@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 90vh;  */
+    font-family: "Poppins", sans-serif;
+}
+
+.border-home {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    /* width: 100%; */
+}
+
+.border-home p {
+    color: #032B5F;
+    font-size: 15px;
+} 
+
+/* Logo Styling */
+.logo-home {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.button {
+    font-family: "Poppins", sans-serif;
+    background-color: #032B5F; 
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #003f7f; /* Darker blue on hover */
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.4); /* Adjusted focus color */
+}

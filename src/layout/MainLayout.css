@@ -1,0 +1,39 @@
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    background-color: #032B5F; 
+  }
+  
+  .main-header {
+    flex-shrink: 0;
+  }
+  
+  .main-body {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  .main-footer {
+    flex-shrink: 0;
+  }
+  
+  .footer-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .main-container {
+      max-width: 28rem; 
+    }
+  }
+
+  @media (min-width: 768px) {
+    .footer-content {
+      max-width: 28rem; 
+    }
+  }
+  
