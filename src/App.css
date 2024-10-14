@@ -40,6 +40,7 @@
     margin-bottom: 20px;
 }
 
+
 .button {
     font-family: "Poppins", sans-serif;
     background-color: #032B5F;
@@ -50,7 +51,7 @@
     border-radius: 6px;
     cursor: pointer;
     margin-bottom: 10px;
-    width: 180px;
+    width: 120px;
     transition: background-color 0.3s ease;
 }
 .error-message {
@@ -69,6 +70,7 @@
 
 .modal-buttons {
     display: flex;
+    justify-content: space-around;
 }
 
 .modal-overlay {
