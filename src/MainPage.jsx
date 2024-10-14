@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import seafloorLogo from './assets/logo.png';
+import seafloorLogo from './assets/3d-logo.png';
 
 function MainPage({ openModal }) {
   return (
@@ -10,7 +10,8 @@ function MainPage({ openModal }) {
           <div className='logo-home'>
             <img src={seafloorLogo} className="logo" alt="Seafloor Finance logo" />
           </div>
-          <h1>Seafloor Finance</h1>
+          <h1>Welcome to<br/>Seafloor Finance!</h1>
+
           <div className="card">
             <button className="button" onClick={() => openModal('business')}>
               Business User
@@ -20,9 +21,7 @@ function MainPage({ openModal }) {
               Investor
             </button>
           </div>
-          <p className="footer-home">
-            Welcome to Seafloor Finance where raising funds is just one click away.
-          </p>
+          <p>Raising funds is just one click away.</p>
         </div>
       </div>
     </>

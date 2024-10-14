@@ -1,20 +1,19 @@
-/* General container styles */
-.container {
+
+.dash-container {
     background-color: #032B5F; 
     padding: 20px;
-    max-width: 1500px; 
-    margin: 0 auto; /* Center the container */
-    display: flex; /* Enable flexbox for vertical alignment */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center align items horizontally */
-    justify-content: flex-start; /* Align items at the start (top) of the container */
-    min-height: 100vh; /* Make sure it takes at least the full viewport height */
-    padding: 5px 20px 20px 30px;
+    max-width: 350px; 
+    margin: 0 auto;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+    padding: 5px 20px 50px 30px;
 }
 
 /* Header styling */
 .header {
-    font-size: 26px; /* Base font size */
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     color: #fff;
@@ -25,27 +24,27 @@
 /* Token list styles */
 .token-list {
     display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    width: 100%; /* Ensure it takes full width of the container */
-    align-items: center; /* Center align token cards */
+    flex-direction: column; 
+    width: 100%;
+    align-items: center;
 }
 
 /* Token card styling */
 .token-card {
-    width: 90%; /* Default width *//* Limit max width for larger screens */
+    width: 90%; 
     background-color: #fff;
     border-radius: 20px;
     padding: 20px;
-    margin-bottom: 15px; /* Space between cards */
+    margin-bottom: 15px; 
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease; /* Optional hover effect */
+    transition: box-shadow 0.3s ease; 
     flex-direction:column;
 }
 
 .token-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Change shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
 
 .token-image {
@@ -63,31 +62,31 @@
     font-size: 18px; /* Base font size */
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: #1a1a1a; /* Use Colors.PRIMARY equivalent */
-    margin-bottom: 5px;
+    color: #032B5F; 
 }
 
 .token-description {
-    font-size: 14px; /* Base font size */
-    color: #333;
-    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; 
+    color: grey;
 }
 
 .token-invest {
-    font-size: 16px; /* Base font size */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; 
     font-weight: bold;
     color: #333;
 }
 
 .gif-container-dash {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    margin: 20px 0; /* Add some margin */
+    justify-content: center; 
+    margin: 20px 0; 
 }
 
 .gif-container-dash img {
-    max-width: 100%; /* Make it responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto; 
 }
 
 /* Media Queries for Responsive Design */

@@ -4,29 +4,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 80px;
     text-align: center;
   }
   
   .profile-page h1 {
-    font-size: 3rem;
+    font-size: 20px;
     color: #fff;
-    margin-bottom: 20px;
   }
   
   .profile-info {
-    font-size: 1.2rem;
+    font-size: 15px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+    /* align-items: flex-start; */
+    gap: 20px;
     width: 100%;
-    max-width: 600px;
+    max-width: 350px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
   }
   
   .profile-item {
@@ -41,7 +38,7 @@
   }
   
   .profile-value {
-    font-size: 2rem;
+    font-size: 15px;
     color: #032B5F;
     word-break: break-all;
   }

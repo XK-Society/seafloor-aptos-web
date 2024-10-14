@@ -30,13 +30,13 @@ const InvestDashboard = () => {
     ];
 
     return (
-        <div className="container">
+        <div className="dash-container">
             <h1 className="header">List of Tokenize</h1>
             <div className="token-list">
                 {tokens.map(token => (
                     <div key={token.id} className="token-card">
                         <div className="gif-container-dash">
-                            <img src={DashImage} alt="Default Tokenize image" />
+                            <img src={DashImage} alt="Default Tokenize image" className="token-image" />
                         </div>
                         <div className="token-info">
                             <h2 className="token-name">{token.name}</h2>

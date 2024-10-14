@@ -3,6 +3,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './HomeInvestor.css';
 import { useNavigate } from 'react-router-dom';
 import TokenImage from '../assets/turtle.gif';
+import InvTokenList from './InvTokenList/InvTokenList';
 import { AptosClient, AptosAccount, FaucetClient, TokenClient } from "aptos";
 
 const MODULE_ADDRESS = "0xdb9e0c026f8b61da781e54bbfab64de72d85fff537c0ca872648aa0cac7f3c07";
@@ -15,7 +16,6 @@ const defaultTokens = [
     { id: 2, name: 'Agriculture Business', price: '2000 APT', desc: 'Buy the CRAB Tokens', image: 'https://via.placeholder.com/50' },
     { id: 3, name: 'Fruit business', price: '3000 APT', desc: 'Buy the CRAB Tokens', image: 'https://via.placeholder.com/50' },
     { id: 4, name: 'Animal farm business', price: '4000 APT', desc: 'Buy the CRAB Tokens', image: 'https://via.placeholder.com/50' },
-    // ... (other tokens remain the same)
 ];
 
 const InTokenList = ({ tokens = defaultTokens }) => {
@@ -96,14 +96,14 @@ const InTokenList = ({ tokens = defaultTokens }) => {
     return (
         <div className="container-home">
             <h2 className="investText">Invest in Interested Business!</h2>
+            <h3 className="tokentitle">List Of Tokens</h3>
             <div className="primaryContainer">
-                <h3 className="tokentitle">List Of Tokens</h3>
                 <div className="tokenContainer">
                     <div className="tokenSlider" style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
                         {tokens.map((token) => (
                             <div key={token.id} className="tokenItem">
                                 <div className="gif-container-token">
-                                    <img src={TokenImage} alt="Default Tokenize image" />
+                                    <img src={TokenImage} alt="Default Tokenize image" className="tokenImage" />
                                 </div>
                                 <h4 className="tokenName">{token.name}</h4>
                                 <p className="tokenDescription">{token.desc}</p>

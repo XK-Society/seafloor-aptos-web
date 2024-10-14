@@ -8,42 +8,41 @@
 }
 
 .investText {
-    margin: 40px 0;
-    font-size: 30px;
+    /* margin: 40px 0; */
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
     color: #fff;
 }
 .purchased-noty{
-    color: #01204E; /* Dark blue color for the text */
-    font-size: 20px; /* Font size */
-    margin-bottom: 1rem; /* Space below the heading */
-    font-weight: bold; /* Make the text bold */
-    text-align: center; /* Center the text */
+    color: #032B5F;
+    font-size: 18px;
+    margin-bottom: 1rem; 
+    font-weight: bold; 
+    text-align: center;
 }
 @media (max-width: 480px) {
     .purchased-noty {
-        font-size: 18px; /* Adjust font size for smaller screens */
+        font-size: 14px;
     }
 }
-.primaryContainer {
-    width: 85%;
+/* .primaryContainer {
+    width: 70%;
     background-color: #fff;
-    padding: 20px;
+    padding: 0 15px 15px 20px;
     border-radius: 15px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .tokentitle {
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
-    color: #032b5f;
-    margin-bottom: 20px;
+    color: white;
 }
 
 .tokenContainer {
     position: relative;
-    width: 100%;
-    overflow: hidden;
+    /* width: 100%; */
+    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,28 +56,28 @@
 .tokenItem {
     min-width: 100%;
     text-align: center;
-    margin-bottom:30px;
+    background-color: white;
 }
 
 .tokenImage {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    padding-top: 10px;
 }
 
 .tokenName {
-    font-size: 24px;
+    font-size: 18px;
     color: #032b5f;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
 }
 
 .tokenDescription {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 20px;
-    color: #333;
-    font-family: 'Volte', sans-serif;
+    color: grey;
+    font-family: 'Poppins', sans-serif;
 }
 
 .tokenButton {
@@ -98,7 +97,7 @@
 
 .arrowsContainer {
     position: absolute;
-    width: 100%;
+    width: 95%;
     top: 50%;
     display: flex;
     justify-content: space-between;
@@ -109,7 +108,9 @@
     background-color: #032b5f;
     color: #fff;
     border: none;
-    padding: 10px;
+    width: 35px;
+    height: 35px;
+    /* padding: 15px 15px; */
     border-radius: 50%;
     cursor: pointer;
 }
@@ -139,30 +140,33 @@
 }
 
 .modalContent h3 {
-    color: #01204E; /* Dark blue color */
-    font-size: 30px; 
+    color: #032B5F;
+    font-size: 20px; 
     font-family: 'Poppins', sans-serif;
 }
 
 .modalButtons {
+    
     display: flex;
     justify-content: space-between;
     gap: 1rem; 
 }
 
 .modalButton {
-    background-color: #01204E; /* Dark blue color */
-    color: #fff; /* White text */
-    padding: 12px 24px; /* Padding for buttons */
-    font-size: 16px; /* Font size */
-    border: none; /* Remove border */
-    border-radius: 6px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    font-family: 'Poppins', sans-serif;
+    background-color: #032B5F; 
+    color: #fff; 
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
     transition: background-color 0.3s ease; 
 }
 
 .closeButton {
-    background-color: #f44336; /* Red */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f44336; 
     color: white;
 }
 
@@ -171,21 +175,21 @@
 }
 .gif-container-turtle {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    margin: 20px 0; /* Add some margin */
+    justify-content: center; 
+    margin: 20px 0;
 }
 
 .gif-container-turtle img {
-    max-width: 100%; /* Make it responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 10px;
+    height: auto; 
 }
 
-media (max-width: 480px) {
+@media (max-width: 480px) {
     .modalContent {
-        padding: 1rem; /* Reduce padding on smaller screens */
+        padding: 1rem; 
     }
     
     .modalButton {
-        padding: 10px 20px; /* Adjust padding for smaller screens */
+        padding: 10px 20px; 
     }
 }

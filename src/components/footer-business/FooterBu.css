@@ -1,48 +1,44 @@
 .footer-business {
-  background-color: #fff; /* White background */
-  border-radius: 20px; /* Curved edges */
-  width: 96.5%; /* Full width of the screen */
-  position: fixed; /* Stick to the bottom */
-  bottom: 0; /* Position at the bottom */
-  /*left: 50%;  Center the footer */
-  /*transform: translateX(-50%);  Ensure it's perfectly centered */
-  margin: auto; /* Center the footer */
-  padding: 1rem; /* Padding around the content */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-  /* z-index: 1000; Ensure it's above other elements */
-  /*box-sizing: border-box;  Include padding and border in width */
+  background-color: #fff; 
+  border-radius: 20px; 
+  width: 100%; 
+  position: fixed; 
+  bottom: 0; 
+  /* left: 50%;  */
+  /*transform: translateX(-50%);   */
+  margin: auto; 
+  padding: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  /* z-index: 1000; */
+  box-sizing: border-box;
 }
 
 .footer-container-business {
-  display: flex; /* Flexbox for layout */
-  width: 100%; /* Ensure it takes full width of the footer */
-  max-width: 1500px; /* Maximum width to avoid overflow */
-  min-width: 320px; /* Minimum width */
-  justify-content: space-around; /* Space out items evenly */
-  align-items: center; /* Center align items vertically */
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  margin: 0 auto; /* Center the container */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  display: flex; 
+  /* width: 100%;  */
+  /* max-width: 1500px; 
+  min-width: 320px; */
+  justify-content: space-around; 
+  align-items: center;
+  /* flex-wrap: wrap;  */
+  /* margin: 0 auto; */
+  box-sizing: border-box; 
 }
 
 .footer-item-business {
-  text-align: center;
-  color: grey; /* Default color for unselected icons */
+  /* text-align: center; */
+  color: grey; 
   text-decoration: none;
   transition: color 0.3s;
-  flex: 1;
-  /* min-width: 200px; */
-  margin: 1px;
 }
 
 .footer-icon-business {
-  font-size: 40px;
-  margin-bottom: 1px;
-  color: grey; /* Default icon color */
+  font-size: 25px;
+  color: grey;
 }
 
 .footer-item-business.active .footer-icon-business {
-  color: #032B5F; /* Color when selected */
+  color: #032B5F;
 }
 
 

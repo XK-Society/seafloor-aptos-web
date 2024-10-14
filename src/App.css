@@ -2,48 +2,55 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh; /* Full viewport height */
+    /* height: 80vh; */
+    padding-top: 80px;
     font-family: "Poppins", sans-serif;
 }
 .border-home {
     text-align: center;
     background-color: #fff;
-    padding: 30px;
+    padding: 50px 40px 25px 40px ;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    max-width: 500px;
     margin: auto;
-    width: 100%;
+    /* width: 50%; */
 }
 
 /* Logo Styling */
-.logo-home {
+/* .logo-home {
     margin-bottom: 20px;
+} */
+
+.border-home h1 {
+    font-size: 18px;
+}
+
+.border-home p {
+    font-size: 14px;
 }
 
 .logo {
-    width: 185px;
-    height: auto;
+    width: 140px;
 }
 
-/* Heading Styling */
 .heading-role {
-    color: #01204E; /* Dark blue color */
+    color: #01204E; 
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Button Styling */
 .button {
-    background-color: #0056b3; /* Blue color */
+    font-family: "Poppins", sans-serif;
+    background-color: #032B5F;
     color: #fff;
-    padding: 12px 24px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 14px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    margin-bottom: 15px;
-    width: 100%;
+    margin-bottom: 10px;
+    width: 180px;
     transition: background-color 0.3s ease;
 }
 .error-message {
@@ -52,19 +59,16 @@
 }
 
 .button:hover {
-    background-color: #003f7f; /* Darker blue on hover */
+    background-color: #003f7f; 
 }
 
 .button:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.4); /* Adjusted focus color */
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.4); 
 }
 
-/* Footer Styling */
-.footer-home {
-    font-size: 14px;
-    color: #333;
-    margin-top: 20px;
+.modal-buttons {
+    display: flex;
 }
 
 .modal-overlay {
@@ -88,18 +92,18 @@
     font-family: "Poppins", sans-serif;
 }
 .close-button {
-    position: absolute; /* Positioning it relative to the modal */
-    top: 10px; /* Distance from the top */
-    right: 10px; /* Distance from the right */
-    background: none; /* No background */
-    border: none; /* No border */
-    font-size: 24px; /* Larger font for visibility */
-    color: #01204E; /* Dark blue color for the "X" */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: color 0.3s ease; /* Transition effect for color change */
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    background: none; 
+    border: none;
+    font-size: 24px; 
+    color: #01204E; 
+    cursor: pointer; 
+    transition: color 0.3s ease; 
 }
 .close-button:hover {
-    color: #ff0000; /* Change color on hover (red) */
+    color: #ff0000; 
 }
 
 .close-modal {
