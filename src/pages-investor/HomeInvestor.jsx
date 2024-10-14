@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import TokenImage from '../assets/turtle.gif';
 import InvTokenList from './InvTokenList/InvTokenList';
 import { AptosClient, AptosAccount, FaucetClient, TokenClient } from "aptos";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const MODULE_ADDRESS = "0xdb9e0c026f8b61da781e54bbfab64de72d85fff537c0ca872648aa0cac7f3c07";
 const NODE_URL = "https://fullnode.devnet.aptoslabs.com";
@@ -46,13 +47,13 @@ const InTokenList = ({ tokens = defaultTokens }) => {
         initializeAptos();
     }, []);
 
-    const goToPrevious = () => {
-        setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : tokens.length - 1));
-    };
-
-    const goToNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex < tokens.length - 1 ? prevIndex + 1 : 0));
-    };
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % tokens.length);
+      };
+    
+      const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + tokens.length) % tokens.length);
+      };
 
     const handleButtonPress = (token) => {
         setSelectedTokenName(token.name);
@@ -97,34 +98,38 @@ const InTokenList = ({ tokens = defaultTokens }) => {
         <div className="container-home">
             <h2 className="investText">Invest in Interested Business!</h2>
             <h3 className="tokentitle">List Of Tokens</h3>
-            <div className="primaryContainer">
-                <div className="tokenContainer">
-                    <div className="tokenSlider" style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
-                        {tokens.map((token) => (
-                            <div key={token.id} className="tokenItem">
-                                <div className="gif-container-token">
-                                    <img src={TokenImage} alt="Default Tokenize image" className="tokenImage" />
-                                </div>
-                                <h4 className="tokenName">{token.name}</h4>
-                                <p className="tokenDescription">{token.desc}</p>
-                                <p className="tokenDescription">{token.price}</p>
-                                <button className="tokenButton" onClick={() => handleButtonPress(token)}>
-                                    Buy Tokens
-                                </button>
-                            </div>
+            <div className="slider-container">
+                <div className="slider-content">
+                    {tokens.map((token, index) => (
+                       <div
+                       key={token.id}
+                       className={`slider-item ${index === currentIndex ? 'active' : ''}`}
+                       style={{
+                         transform: `translateX(${(index - currentIndex) * 100}%)`,
+                         opacity: index === currentIndex ? 1 : 0,
+                         transition: 'transform 0.5s ease, opacity 0.5s ease',
+                       }}
+                     >
+                       <div className="business-info">
+                       <img src={TokenImage} alt={token.name} className="token-image" />
+                       <h2>{token.name}</h2>
+                       <p>{token.desc}</p>
+                       <p>{token.price}</p>
+                        <button className="tokenButton" onClick={() => handleButtonPress(token)}>
+                            Buy Tokens
+                        </button>
+                        </div>
+                        </div>
                         ))}
                     </div>
 
-                    <div className="arrowsContainer">
-                        <button className="arrowButton leftArrow" onClick={goToPrevious}>
-                            <FaChevronLeft />
-                        </button>
-                        <button className="arrowButton rightArrow" onClick={goToNext}>
-                            <FaChevronRight />
-                        </button>
-                    </div>
+                    <button onClick={prevSlide} className="slider-button prev">
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button onClick={nextSlide} className="slider-button next">
+                        <ChevronRight size={24} />
+                    </button>
                 </div>
-            </div>
 
             {modalVisible && (
                 <div className="modalOverlay">
